@@ -16,9 +16,7 @@ class EulerIntegrator:
 
     def evolve(self, x0, n_steps, checkpoints=None, verbose=False, init_msg=None, end_msg=None) -> tuple[NDArray, NDArray]:
         checkpoints = checkpoints if checkpoints is not None else n_steps
-        
-        # save_interval = max(1, n_steps // (checkpoints - 1)) # one checkpoint is already at the initial time
-        
+                
         save_indices = np.linspace(1, n_steps, checkpoints, dtype=int)
         if verbose:
             print("checkpoints:")
